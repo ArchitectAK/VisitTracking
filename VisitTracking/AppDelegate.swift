@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 3
         locationManager.startUpdatingLocation()
         
-        
         return true
     }
 
