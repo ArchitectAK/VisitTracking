@@ -12,6 +12,8 @@
 		EF7FE9362223EBA30026C709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7FE9342223EBA30026C709 /* Main.storyboard */; };
 		EF7FE9382223EBA60026C709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF7FE9372223EBA60026C709 /* Assets.xcassets */; };
 		EF7FE93B2223EBA60026C709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7FE9392223EBA60026C709 /* LaunchScreen.storyboard */; };
+		EF7FE9432223FAA40026C709 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7FE9422223FAA40026C709 /* Location.swift */; };
+		EF7FE9452224D5020026C709 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7FE9442224D5020026C709 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		EF7FE9372223EBA60026C709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF7FE93A2223EBA60026C709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF7FE93C2223EBA60026C709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF7FE9422223FAA40026C709 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		EF7FE9442224D5020026C709 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				EF7FE9372223EBA60026C709 /* Assets.xcassets */,
 				EF7FE9392223EBA60026C709 /* LaunchScreen.storyboard */,
 				EF7FE93C2223EBA60026C709 /* Info.plist */,
+				EF7FE9422223FAA40026C709 /* Location.swift */,
+				EF7FE9442224D5020026C709 /* MapViewController.swift */,
 			);
 			path = VisitTracking;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7FE9332223EBA30026C709 /* ViewController.swift in Sources */,
+				EF7FE9432223FAA40026C709 /* Location.swift in Sources */,
 				EF7FE9312223EBA30026C709 /* AppDelegate.swift in Sources */,
+				EF7FE9452224D5020026C709 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
