@@ -90,7 +90,7 @@ extension AppDelegate: CLLocationManagerDelegate {
         let location = Location(visit: visit, descriptionString: description)
         
         // Save location to disk
-        LocationStorage.shared.saveLocationOnDisk(location)
+//        LocationStorage.shared.saveLocationOnDisk(location)
         
         // create notification content
         let content = UNMutableNotificationContent()
