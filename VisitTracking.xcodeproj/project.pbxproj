@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF3155722229034400CC5B13 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3155712229034400CC5B13 /* TableViewController.swift */; };
 		EF7FE9312223EBA30026C709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7FE9302223EBA30026C709 /* AppDelegate.swift */; };
 		EF7FE9332223EBA30026C709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7FE9322223EBA30026C709 /* ViewController.swift */; };
 		EF7FE9362223EBA30026C709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7FE9342223EBA30026C709 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF3155712229034400CC5B13 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		EF7FE92D2223EBA30026C709 /* VisitTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7FE9302223EBA30026C709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF7FE9322223EBA30026C709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				EF7FE9422223FAA40026C709 /* Location.swift */,
 				EF7FE9442224D5020026C709 /* MapViewController.swift */,
 				EF7FE9462224D6F60026C709 /* LocationStorage.swift */,
+				EF3155712229034400CC5B13 /* TableViewController.swift */,
 			);
 			path = VisitTracking;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7FE9472224D6F60026C709 /* LocationStorage.swift in Sources */,
+				EF3155722229034400CC5B13 /* TableViewController.swift in Sources */,
 				EF7FE9332223EBA30026C709 /* ViewController.swift in Sources */,
 				EF7FE9432223FAA40026C709 /* Location.swift in Sources */,
 				EF7FE9312223EBA30026C709 /* AppDelegate.swift in Sources */,
