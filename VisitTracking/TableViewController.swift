@@ -8,23 +8,41 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // 1
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(newLocationAdded(_:)),
+            name: .newLocationSaved,
+            object: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // 2
+    @objc func newLocationAdded(_ notification: Notification) {
+        // 3
+        tableView.reloadData()
     }
-    */
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return LocationStorage.shared.locations.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell", for: indexPath)
+        let location = LocationStorage.shared.locations[indexPath.row]
+        cell.textLabel?.numberOfLines = 3
+        cell.textLabel?.text = location.description
+        cell.detailTextLabel?.text = location.dateString
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
 
 }

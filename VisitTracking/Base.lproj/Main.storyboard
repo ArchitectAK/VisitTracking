@@ -70,7 +70,7 @@
         <!--Places-->
         <scene sceneID="qu5-pi-pZ2">
             <objects>
-                <tableViewController title="Places" id="kdG-ig-q87" customClass="PlacesTableViewController" customModule="VisitTracking" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Places" id="kdG-ig-q87" customClass="TableViewController" customModule="VisitTracking" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YNf-kX-tv4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
