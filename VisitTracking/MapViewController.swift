@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         mapView.userTrackingMode = .follow
         
-        let annotations = LocationsStorage.shared.locations.map { annotationForLocation($0) }
+        let annotations = LocationStorage.shared.locations.map { annotationForLocation($0) }
         mapView.addAnnotations(annotations)
         
         NotificationCenter.default.addObserver(
@@ -32,7 +33,7 @@ class MapViewController: UIViewController {
             return
         }
         
-        LocationsStorage.shared.saveCLLocationToDisk(currentLocation)
+        LocationStorage.shared.saveCLLocationToDisk(currentLocation)
     }
     
     func annotationForLocation(_ location: Location) -> MKAnnotation {
