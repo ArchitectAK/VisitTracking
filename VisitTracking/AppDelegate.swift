@@ -39,13 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         locationManager.startMonitoringVisits()
         locationManager.delegate = self
         
-        // 1
         locationManager.distanceFilter = 35
         
-        // 2
         locationManager.allowsBackgroundLocationUpdates = true
         
-        // 3
         locationManager.startUpdatingLocation()
         
         return true
@@ -81,9 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
         // create CLLocation from the coordinates of CLVisit
-        let clLocation = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
+        _ = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
         
         // Get location description
+        
+        AppDelegate.geoCoder.reverseGeocodeLocation(clLocation) { placemarks, _ in
+            if let place = placemarks?.first {
+                let description = "\(place)"
+                self.newVisitReceived(visit, description: description)
+            }
+        }
     }
     
     func newVisitReceived(_ visit: CLVisit, description: String) {
