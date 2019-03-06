@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
         // create CLLocation from the coordinates of CLVisit
-        _ = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
+        let clLocation = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
         
         // Get location description
         
@@ -110,5 +110,53 @@ extension AppDelegate: CLLocationManagerDelegate {
         center.add(request, withCompletionHandler: nil)
         
     }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+        guard let location = locations.first else {
+            return
+        }
+        
+        AppDelegate.geoCoder.reverseGeocodeLocation(location) { placemarks, _ in
+            if let place = placemarks?.first {
+    
+                let description = "Fake visit: \(place)"
+                
+                let fakeVisit = FakeVisit(
+                    coordinates: location.coordinate,
+                    arrivalDate: Date(),
+                    departureDate: Date())
+                self.newVisitReceived(fakeVisit, description: description)
+                
+            }
+        }
+    }
+    
 }
-
+final class FakeVisit: CLVisit {
+    private let myCoordinates: CLLocationCoordinate2D
+    private let myArrivalDate: Date
+    private let myDepartureDate: Date
+    
+    override var coordinate: CLLocationCoordinate2D {
+        return myCoordinates
+    }
+    
+    override var arrivalDate: Date {
+        return myArrivalDate
+    }
+    
+    override var departureDate: Date {
+        return myDepartureDate
+    }
+    
+    init(coordinates: CLLocationCoordinate2D, arrivalDate: Date, departureDate: Date) {
+        myCoordinates = coordinates
+        myArrivalDate = arrivalDate
+        myDepartureDate = departureDate
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
